@@ -24,6 +24,7 @@ a página inicial carrega
     Log To Console    Testando carregamento de filmes populares do TMDB...
     
     Wait Until Page Contains Element    css:img    timeout=${TIMEOUT}
+    Sleep    1s
     Capture Page Screenshot    02-filmes-populares-carregados.png
     
     ${filmes_carregados}=    Run Keyword And Return Status    
@@ -56,6 +57,7 @@ o usuário navega para página "Explorar"
     END
     
     Wait Until Location Contains    explorar    timeout=${TIMEOUT}
+    Sleep    1s
     Capture Page Screenshot    03-pagina-explorar.png
     Log To Console    Página explorar carregada
 
@@ -64,7 +66,6 @@ filmes da API TMDB são exibidos na grade
     Log To Console    Verificando filmes na página explorar...
     
     Wait Until Page Contains Element    css:img    timeout=${TIMEOUT}
-    Capture Page Screenshot    04-filmes-explorar-carregados.png
     
     ${filmes_explorar}=    Run Keyword And Return Status    
     ...    Page Should Contain Element    css:div[class*="grid"]
@@ -84,10 +85,10 @@ o usuário acessa uma página específica de filme
     TRY
         Wait Until Page Contains Element    css:img    timeout=${TIMEOUT}
         Wait Until Page Does Not Contain    carregando    timeout=10s
-        Capture Page Screenshot    05-pagina-filme-carregada.png
+        Capture Page Screenshot    04-pagina-filme-carregada.png
         Log To Console    Página do filme carregada - API TMDB funcionando
     EXCEPT
-        Capture Page Screenshot    05-pagina-filme-erro.png
+        Capture Page Screenshot    04-pagina-filme-erro.png
         Log To Console    Página pode estar carregando dados da API TMDB
     END
 
@@ -98,7 +99,6 @@ detalhes do filme são carregados da API
     
     IF    ${conteudo_filme}
         Log To Console    Dados do filme carregados da API TMDB
-        Capture Page Screenshot    06-detalhes-filme-carregados.png
     END
 
 o usuário testa um ID de filme inválido
@@ -108,14 +108,13 @@ o usuário testa um ID de filme inválido
     Go To    ${URL_FRONTEND}/filmes/999999999
     
     Sleep    5s
-    Capture Page Screenshot    07-tratamento-erro-api.png
+    Capture Page Screenshot    05-tratamento-erro-api.png
     
     Log To Console    Aplicação lidou bem com erros da API
 
 a mensagem de erro "404" aparece
     [Documentation]    Verifica se a aplicação trata erros adequadamente
     Log To Console     Tratamento de erro verificado
-    Capture Page Screenshot    08-erro-404-verificado.png
 
 Fechar Navegador
     [Documentation]    Fecha o navegador

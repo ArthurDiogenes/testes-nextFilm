@@ -1,97 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-09T16:15:41.847141" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-09T16:23:45.493629" rpa="false" schemaversion="5">
 <suite id="s1" name="Tmdb Api Test" source="C:\Users\arthu\Code\nextFilm\testes\integracaoAPI\tmdb_api_test.robot">
-<test id="s1-t1" name="Teste Integração TMDB BDD" line="127">
+<test id="s1-t1" name="Teste Integração TMDB BDD" line="125">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>\n🎬 Iniciando Teste BDD de Integração com TMDB...</arg>
+<arg>\n Iniciando Teste BDD de Integração com TMDB...</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:42.128884" elapsed="0.000330"/>
+<status status="PASS" start="2025-06-09T16:23:45.778781" elapsed="0.000247"/>
 </kw>
 <kw name="Given que o navegador é aberto na página inicial">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:42.131854" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<msg time="2025-06-09T16:23:45.779862" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
 <arg>${URL_FRONTEND}</arg>
 <arg>${NAVEGADOR}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-09T16:15:42.131702" elapsed="2.031753"/>
+<status status="PASS" start="2025-06-09T16:23:45.779703" elapsed="1.957089"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.163603" elapsed="0.038930"/>
+<status status="PASS" start="2025-06-09T16:23:47.737022" elapsed="0.046405"/>
 </kw>
 <kw name="Set Selenium Timeout" owner="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.202938" elapsed="0.002600"/>
+<status status="PASS" start="2025-06-09T16:23:47.783691" elapsed="0.001465"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:44.397399" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="01-pagina-inicial-tmdb.png"&gt;&lt;img src="01-pagina-inicial-tmdb.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-09T16:23:47.933255" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="01-pagina-inicial-tmdb.png"&gt;&lt;img src="01-pagina-inicial-tmdb.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>01-pagina-inicial-tmdb.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.205819" elapsed="0.191669"/>
+<status status="PASS" start="2025-06-09T16:23:47.785280" elapsed="0.148114"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navegador aberto em ${URL_FRONTEND}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.397630" elapsed="0.000358"/>
+<status status="PASS" start="2025-06-09T16:23:47.933604" elapsed="0.000405"/>
 </kw>
 <doc>Abre o navegador e vai para o site</doc>
-<status status="PASS" start="2025-06-09T16:15:42.131486" elapsed="2.266587"/>
+<status status="PASS" start="2025-06-09T16:23:45.779504" elapsed="2.154664"/>
 </kw>
 <kw name="When a página inicial carrega">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Testando carregamento de filmes populares do TMDB...</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.398529" elapsed="0.000366"/>
+<status status="PASS" start="2025-06-09T16:23:47.935045" elapsed="0.000278"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>css:img</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.398970" elapsed="0.012509"/>
+<status status="PASS" start="2025-06-09T16:23:47.935480" elapsed="0.034677"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T16:23:48.970977" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T16:23:47.970311" elapsed="1.000787"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:44.541940" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="02-filmes-populares-carregados.png"&gt;&lt;img src="02-filmes-populares-carregados.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-09T16:23:49.082115" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="02-filmes-populares-carregados.png"&gt;&lt;img src="02-filmes-populares-carregados.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>02-filmes-populares-carregados.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.411618" elapsed="0.130411"/>
+<status status="PASS" start="2025-06-09T16:23:48.971273" elapsed="0.110923"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:49.737759" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-09T16:15:49.737893" level="FAIL">Element 'css:img[alt*="filme" i]' did not appear in 5 seconds.</msg>
+<msg time="2025-06-09T16:23:54.365607" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-09T16:23:54.365758" level="FAIL">Element 'css:img[alt*="filme" i]' did not appear in 5 seconds.</msg>
 <arg>css:img[alt*="filme" i]</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="FAIL" start="2025-06-09T16:15:44.542291" elapsed="5.198210">Element 'css:img[alt*="filme" i]' did not appear in 5 seconds.</status>
+<status status="FAIL" start="2025-06-09T16:23:49.082499" elapsed="5.285508">Element 'css:img[alt*="filme" i]' did not appear in 5 seconds.</status>
 </kw>
-<msg time="2025-06-09T16:15:49.740640" level="INFO">${filmes_carregados} = False</msg>
+<msg time="2025-06-09T16:23:54.368191" level="INFO">${filmes_carregados} = False</msg>
 <var>${filmes_carregados}</var>
 <arg>Wait Until Page Contains Element</arg>
 <arg>css:img[alt*="filme" i]</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-06-09T16:15:44.542164" elapsed="5.198496"/>
+<status status="PASS" start="2025-06-09T16:23:49.082360" elapsed="5.285864"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${filmes_carregados}">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:49.748710" level="INFO">Current page contains element 'css:img[src*="tmdb" i]'.</msg>
+<msg time="2025-06-09T16:23:54.380969" level="INFO">Current page contains element 'css:img[src*="tmdb" i]'.</msg>
 <arg>css:img[src*="tmdb" i]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-06-09T16:15:49.740999" elapsed="0.007775"/>
+<status status="PASS" start="2025-06-09T16:23:54.368866" elapsed="0.012181"/>
 </kw>
-<msg time="2025-06-09T16:15:49.748868" level="INFO">${filmes_carregados} = True</msg>
+<msg time="2025-06-09T16:23:54.381173" level="INFO">${filmes_carregados} = True</msg>
 <var>${filmes_carregados}</var>
 <arg>Page Should Contain Element</arg>
 <arg>css:img[src*="tmdb" i]</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-06-09T16:15:49.740886" elapsed="0.008011"/>
+<status status="PASS" start="2025-06-09T16:23:54.368626" elapsed="0.012565"/>
 </kw>
-<status status="PASS" start="2025-06-09T16:15:49.740736" elapsed="0.008192"/>
+<status status="PASS" start="2025-06-09T16:23:54.368349" elapsed="0.012875"/>
 </branch>
-<status status="PASS" start="2025-06-09T16:15:49.740714" elapsed="0.008245"/>
+<status status="PASS" start="2025-06-09T16:23:54.368313" elapsed="0.012945"/>
 </if>
 <if>
 <branch type="IF" condition="not ${filmes_carregados}">
@@ -100,145 +106,145 @@
 <arg>Page Should Contain</arg>
 <arg>Popular</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="NOT RUN" start="2025-06-09T16:15:49.749142" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-06-09T16:23:54.381483" elapsed="0.000019"/>
 </kw>
-<status status="NOT RUN" start="2025-06-09T16:15:49.749008" elapsed="0.000176"/>
+<status status="NOT RUN" start="2025-06-09T16:23:54.381312" elapsed="0.000219"/>
 </branch>
-<status status="PASS" start="2025-06-09T16:15:49.748993" elapsed="0.000213"/>
+<status status="PASS" start="2025-06-09T16:23:54.381294" elapsed="0.000258"/>
 </if>
 <if>
 <branch type="IF" condition="${filmes_carregados}">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Filmes populares carregados da API TMDB</arg>
+<arg>Filmes populares carregados da API TMDB</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:49.749307" elapsed="0.000217"/>
+<status status="PASS" start="2025-06-09T16:23:54.381651" elapsed="0.000221"/>
 </kw>
-<status status="PASS" start="2025-06-09T16:15:49.749234" elapsed="0.000335"/>
+<status status="PASS" start="2025-06-09T16:23:54.381583" elapsed="0.000343"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Página carregou, API TMDB funcionando</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-06-09T16:15:49.749663" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-06-09T16:23:54.382046" elapsed="0.000022"/>
 </kw>
-<status status="NOT RUN" start="2025-06-09T16:15:49.749597" elapsed="0.000105"/>
+<status status="NOT RUN" start="2025-06-09T16:23:54.381955" elapsed="0.000197"/>
 </branch>
-<status status="PASS" start="2025-06-09T16:15:49.749226" elapsed="0.000493"/>
+<status status="PASS" start="2025-06-09T16:23:54.381573" elapsed="0.000599"/>
 </if>
 <doc>Verifica se a página inicial carrega filmes populares da API TMDB</doc>
-<status status="PASS" start="2025-06-09T16:15:44.398359" elapsed="5.351396"/>
+<status status="PASS" start="2025-06-09T16:23:47.934722" elapsed="6.447493"/>
 </kw>
 <kw name="And o usuário navega para página &quot;Explorar&quot;">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Indo para página explorar...</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:49.750087" elapsed="0.000127"/>
+<status status="PASS" start="2025-06-09T16:23:54.382595" elapsed="0.000164"/>
 </kw>
 <try>
 <branch type="TRY">
 <kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:49.750448" level="INFO">Clicking link 'Explorar'.</msg>
+<msg time="2025-06-09T16:23:54.383033" level="INFO">Clicking link 'Explorar'.</msg>
 <arg>Explorar</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-09T16:15:49.750357" elapsed="0.077539"/>
+<status status="PASS" start="2025-06-09T16:23:54.382918" elapsed="0.086418"/>
 </kw>
-<status status="PASS" start="2025-06-09T16:15:49.750291" elapsed="0.077732"/>
+<status status="PASS" start="2025-06-09T16:23:54.382847" elapsed="0.087011"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Go To" owner="SeleniumLibrary">
 <arg>${URL_FRONTEND}/explorar</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="NOT RUN" start="2025-06-09T16:15:49.828262" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-06-09T16:23:54.470751" elapsed="0.000085"/>
 </kw>
-<status status="NOT RUN" start="2025-06-09T16:15:49.828120" elapsed="0.000447"/>
+<status status="NOT RUN" start="2025-06-09T16:23:54.470441" elapsed="0.000522"/>
 </branch>
-<status status="PASS" start="2025-06-09T16:15:49.750265" elapsed="0.078384"/>
+<status status="PASS" start="2025-06-09T16:23:54.382816" elapsed="0.088287"/>
 </try>
 <kw name="Wait Until Location Contains" owner="SeleniumLibrary">
 <arg>explorar</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-06-09T16:15:49.828804" elapsed="2.920566"/>
+<status status="PASS" start="2025-06-09T16:23:54.471335" elapsed="0.215559"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T16:23:55.687927" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T16:23:54.687151" elapsed="1.001057"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:52.993198" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="03-pagina-explorar.png"&gt;&lt;img src="03-pagina-explorar.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-09T16:23:56.046879" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="03-pagina-explorar.png"&gt;&lt;img src="03-pagina-explorar.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>03-pagina-explorar.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:15:52.749615" elapsed="0.243797"/>
+<status status="PASS" start="2025-06-09T16:23:55.688670" elapsed="0.358334"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Página explorar carregada</arg>
+<arg>Página explorar carregada</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:52.993690" elapsed="0.000497"/>
+<status status="PASS" start="2025-06-09T16:23:56.047203" elapsed="0.000367"/>
 </kw>
 <doc>Navega para a página de explorar filmes</doc>
-<status status="PASS" start="2025-06-09T16:15:49.749959" elapsed="3.244820"/>
+<status status="PASS" start="2025-06-09T16:23:54.382444" elapsed="1.665198"/>
 </kw>
 <kw name="Then filmes da API TMDB são exibidos na grade">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Verificando filmes na página explorar...</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:52.996033" elapsed="0.000336"/>
+<status status="PASS" start="2025-06-09T16:23:56.048099" elapsed="0.000262"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>css:img</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-09T16:15:52.996654" elapsed="0.878874"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:53.988578" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="04-filmes-explorar-carregados.png"&gt;&lt;img src="04-filmes-explorar-carregados.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>04-filmes-explorar-carregados.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:15:53.875765" elapsed="0.112994"/>
+<status status="PASS" start="2025-06-09T16:23:56.048563" elapsed="0.008570"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:54.003622" level="INFO">Current page contains element 'css:div[class*="grid"]'.</msg>
+<msg time="2025-06-09T16:23:56.066211" level="INFO">Current page contains element 'css:div[class*="grid"]'.</msg>
 <arg>css:div[class*="grid"]</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-06-09T16:15:53.989430" elapsed="0.014332"/>
+<status status="PASS" start="2025-06-09T16:23:56.057699" elapsed="0.008612"/>
 </kw>
-<msg time="2025-06-09T16:15:54.003944" level="INFO">${filmes_explorar} = True</msg>
+<msg time="2025-06-09T16:23:56.066446" level="INFO">${filmes_explorar} = True</msg>
 <var>${filmes_explorar}</var>
 <arg>Page Should Contain Element</arg>
 <arg>css:div[class*="grid"]</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-06-09T16:15:53.989118" elapsed="0.014865"/>
+<status status="PASS" start="2025-06-09T16:23:56.057418" elapsed="0.009054"/>
 </kw>
 <if>
 <branch type="IF" condition="${filmes_explorar}">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Filmes da API TMDB carregados na página explorar</arg>
+<arg>Filmes da API TMDB carregados na página explorar</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:54.004336" elapsed="0.000383"/>
+<status status="PASS" start="2025-06-09T16:23:56.066740" elapsed="0.000301"/>
 </kw>
-<status status="PASS" start="2025-06-09T16:15:54.004136" elapsed="0.000666"/>
+<status status="PASS" start="2025-06-09T16:23:56.066581" elapsed="0.000513"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Página explorar funcionando com API TMDB</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-06-09T16:15:54.004966" elapsed="0.000047"/>
+<status status="NOT RUN" start="2025-06-09T16:23:56.067296" elapsed="0.000042"/>
 </kw>
-<status status="NOT RUN" start="2025-06-09T16:15:54.004853" elapsed="0.000208"/>
+<status status="NOT RUN" start="2025-06-09T16:23:56.067133" elapsed="0.000412"/>
 </branch>
-<status status="PASS" start="2025-06-09T16:15:54.004100" elapsed="0.000997"/>
+<status status="PASS" start="2025-06-09T16:23:56.066551" elapsed="0.001033"/>
 </if>
 <doc>Verifica se a página explorar mostra filmes da API TMDB</doc>
-<status status="PASS" start="2025-06-09T16:15:52.995617" elapsed="1.009541"/>
+<status status="PASS" start="2025-06-09T16:23:56.047943" elapsed="0.019730"/>
 </kw>
 <kw name="When o usuário acessa uma página específica de filme">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Testando página do filme ID: ${ID_FILME_TESTE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:54.005896" elapsed="0.000266"/>
+<status status="PASS" start="2025-06-09T16:23:56.068572" elapsed="0.000261"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:54.006520" level="INFO">Opening url 'http://localhost:3000/filmes/157336'</msg>
+<msg time="2025-06-09T16:23:56.069109" level="INFO">Opening url 'http://localhost:3000/filmes/157336'</msg>
 <arg>${URL_FRONTEND}/filmes/${ID_FILME_TESTE}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-09T16:15:54.006311" elapsed="3.208457"/>
+<status status="PASS" start="2025-06-09T16:23:56.068953" elapsed="1.234834"/>
 </kw>
 <try>
 <branch type="TRY">
@@ -246,164 +252,152 @@
 <arg>css:img</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.215069" elapsed="0.022536"/>
+<status status="PASS" start="2025-06-09T16:23:57.304249" elapsed="0.026893"/>
 </kw>
 <kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
 <arg>carregando</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until ``text`` disappears from the current page.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.238056" elapsed="0.010681"/>
+<status status="PASS" start="2025-06-09T16:23:57.331423" elapsed="0.023844"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:57.451940" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="05-pagina-filme-carregada.png"&gt;&lt;img src="05-pagina-filme-carregada.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>05-pagina-filme-carregada.png</arg>
+<msg time="2025-06-09T16:23:57.570403" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="04-pagina-filme-carregada.png"&gt;&lt;img src="04-pagina-filme-carregada.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>04-pagina-filme-carregada.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.248955" elapsed="0.203111"/>
+<status status="PASS" start="2025-06-09T16:23:57.355490" elapsed="0.215079"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Página do filme carregada - API TMDB funcionando</arg>
+<arg>Página do filme carregada - API TMDB funcionando</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.452261" elapsed="0.000429"/>
+<status status="PASS" start="2025-06-09T16:23:57.570767" elapsed="0.000359"/>
 </kw>
-<status status="PASS" start="2025-06-09T16:15:57.214941" elapsed="0.237815"/>
+<status status="PASS" start="2025-06-09T16:23:57.304029" elapsed="0.267193"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<arg>05-pagina-filme-erro.png</arg>
+<arg>04-pagina-filme-erro.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-06-09T16:15:57.453189" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-06-09T16:23:57.571445" elapsed="0.000030"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Página pode estar carregando dados da API TMDB</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-06-09T16:15:57.453265" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-06-09T16:23:57.571571" elapsed="0.000038"/>
 </kw>
-<status status="NOT RUN" start="2025-06-09T16:15:57.452958" elapsed="0.000352"/>
+<status status="NOT RUN" start="2025-06-09T16:23:57.571320" elapsed="0.000338"/>
 </branch>
-<status status="PASS" start="2025-06-09T16:15:57.214890" elapsed="0.238449"/>
+<status status="PASS" start="2025-06-09T16:23:57.303954" elapsed="0.267754"/>
 </try>
 <doc>Testa carregamento de página específica de filme</doc>
-<status status="PASS" start="2025-06-09T16:15:54.005649" elapsed="3.447726"/>
+<status status="PASS" start="2025-06-09T16:23:56.068332" elapsed="1.503445"/>
 </kw>
 <kw name="Then detalhes do filme são carregados da API">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:57.465017" level="INFO">Current page contains element 'css:h1'.</msg>
+<msg time="2025-06-09T16:23:57.583535" level="INFO">Current page contains element 'css:h1'.</msg>
 <arg>css:h1</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.454190" elapsed="0.010969"/>
+<status status="PASS" start="2025-06-09T16:23:57.572785" elapsed="0.010873"/>
 </kw>
-<msg time="2025-06-09T16:15:57.465611" level="INFO">${conteudo_filme} = True</msg>
+<msg time="2025-06-09T16:23:57.583810" level="INFO">${conteudo_filme} = True</msg>
 <var>${conteudo_filme}</var>
 <arg>Page Should Contain Element</arg>
 <arg>css:h1</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.454035" elapsed="0.011641"/>
+<status status="PASS" start="2025-06-09T16:23:57.572581" elapsed="0.011260"/>
 </kw>
 <if>
 <branch type="IF" condition="${conteudo_filme}">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Dados do filme carregados da API TMDB</arg>
+<arg>Dados do filme carregados da API TMDB</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.466145" elapsed="0.000552"/>
+<status status="PASS" start="2025-06-09T16:23:57.584149" elapsed="0.000308"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:57.680477" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="06-detalhes-filme-carregados.png"&gt;&lt;img src="06-detalhes-filme-carregados.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>06-detalhes-filme-carregados.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.466991" elapsed="0.213628"/>
-</kw>
-<status status="PASS" start="2025-06-09T16:15:57.465868" elapsed="0.214833"/>
+<status status="PASS" start="2025-06-09T16:23:57.583964" elapsed="0.000670"/>
 </branch>
-<status status="PASS" start="2025-06-09T16:15:57.465823" elapsed="0.214931"/>
+<status status="PASS" start="2025-06-09T16:23:57.583930" elapsed="0.000759"/>
 </if>
 <doc>Verifica se os dados do filme foram carregados</doc>
-<status status="PASS" start="2025-06-09T16:15:57.453762" elapsed="0.227055"/>
+<status status="PASS" start="2025-06-09T16:23:57.572207" elapsed="0.012545"/>
 </kw>
 <kw name="When o usuário testa um ID de filme inválido">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Testando tratamento de erros da API...</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.681478" elapsed="0.000251"/>
+<status status="PASS" start="2025-06-09T16:23:57.585399" elapsed="0.000267"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:15:57.682071" level="INFO">Opening url 'http://localhost:3000/filmes/999999999'</msg>
+<msg time="2025-06-09T16:23:57.585976" level="INFO">Opening url 'http://localhost:3000/filmes/999999999'</msg>
 <arg>${URL_FRONTEND}/filmes/999999999</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-09T16:15:57.681866" elapsed="0.453364"/>
+<status status="PASS" start="2025-06-09T16:23:57.585816" elapsed="0.505433"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-09T16:16:03.136540" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-06-09T16:24:03.092046" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-09T16:15:58.135466" elapsed="5.001294"/>
+<status status="PASS" start="2025-06-09T16:23:58.091571" elapsed="5.000606"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:16:03.232938" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="07-tratamento-erro-api.png"&gt;&lt;img src="07-tratamento-erro-api.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>07-tratamento-erro-api.png</arg>
+<msg time="2025-06-09T16:24:03.195602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="05-tratamento-erro-api.png"&gt;&lt;img src="05-tratamento-erro-api.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>05-tratamento-erro-api.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:16:03.137099" elapsed="0.095912"/>
+<status status="PASS" start="2025-06-09T16:24:03.092358" elapsed="0.103362"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Aplicação lidou bem com erros da API</arg>
+<arg>Aplicação lidou bem com erros da API</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:16:03.233119" elapsed="0.000282"/>
+<status status="PASS" start="2025-06-09T16:24:03.195901" elapsed="0.000324"/>
 </kw>
 <doc>Testa como a aplicação lida com erros da API</doc>
-<status status="PASS" start="2025-06-09T16:15:57.681203" elapsed="5.552273"/>
+<status status="PASS" start="2025-06-09T16:23:57.585074" elapsed="5.611255"/>
 </kw>
 <kw name="Then a mensagem de erro &quot;404&quot; aparece">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Tratamento de erro verificado</arg>
+<arg>Tratamento de erro verificado</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:16:03.233793" elapsed="0.000367"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-09T16:16:03.335296" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="08-erro-404-verificado.png"&gt;&lt;img src="08-erro-404-verificado.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>08-erro-404-verificado.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-09T16:16:03.234321" elapsed="0.101089"/>
+<status status="PASS" start="2025-06-09T16:24:03.196846" elapsed="0.000233"/>
 </kw>
 <doc>Verifica se a aplicação trata erros adequadamente</doc>
-<status status="PASS" start="2025-06-09T16:16:03.233635" elapsed="0.101884"/>
+<status status="PASS" start="2025-06-09T16:24:03.196610" elapsed="0.000529"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-09T16:16:06.337182" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-06-09T16:24:06.197864" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-09T16:16:03.336072" elapsed="3.001325"/>
+<status status="PASS" start="2025-06-09T16:24:03.197585" elapsed="3.000708"/>
 </kw>
 <kw name="Fechar Navegador">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-09T16:16:06.338770" elapsed="2.216585"/>
+<status status="PASS" start="2025-06-09T16:24:06.199288" elapsed="2.198147"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Navegador fechado</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:16:08.555583" elapsed="0.000350"/>
+<status status="PASS" start="2025-06-09T16:24:08.397776" elapsed="0.000830"/>
 </kw>
 <doc>Fecha o navegador</doc>
-<status status="PASS" start="2025-06-09T16:16:06.338312" elapsed="2.217715"/>
+<status status="PASS" start="2025-06-09T16:24:06.199017" elapsed="2.199926"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>\n✅ Teste BDD de Integração com TMDB Completo!</arg>
+<arg>\n Teste BDD de Integração com TMDB Completo!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:16:08.556245" elapsed="0.000268"/>
+<status status="PASS" start="2025-06-09T16:24:08.399497" elapsed="0.000454"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>🎯 API TMDB integrada com sucesso seguindo cenários BDD!</arg>
+<arg>API TMDB integrada com sucesso seguindo cenários BDD!</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-09T16:16:08.556666" elapsed="0.000139"/>
+<status status="PASS" start="2025-06-09T16:24:08.400639" elapsed="0.000840"/>
 </kw>
 <doc>Teste de integração com API TMDB seguindo padrão BDD</doc>
 <tag>api</tag>
 <tag>bdd</tag>
 <tag>tmdb</tag>
-<status status="PASS" start="2025-06-09T16:15:42.128094" elapsed="26.428839"/>
+<status status="PASS" start="2025-06-09T16:23:45.777967" elapsed="22.624294"/>
 </test>
 <doc>Teste de integração com API TMDB seguindo padrão BDD</doc>
-<status status="PASS" start="2025-06-09T16:15:41.847973" elapsed="26.709469"/>
+<status status="PASS" start="2025-06-09T16:23:45.494481" elapsed="22.909388"/>
 </suite>
 <statistics>
 <total>
