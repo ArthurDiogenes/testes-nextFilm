@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Teste de integração com API TMDB usando Selenium
+Documentation    Teste de integração com API TMDB
 Library          SeleniumLibrary
 Library          BuiltIn
 

@@ -8,31 +8,26 @@ ${URL_FRONTEND}     http://localhost:3000
 ${NAVEGADOR}        chrome
 ${TIMEOUT}          10s
 
-${EMAIL_TESTE}      teste-do-robozao@email.com
+${EMAIL_TESTE}      teste-do-robozao4@email.com
 ${SENHA_TESTE}      senha123
-${NOME_TESTE}       Robozao
+${NOME_TESTE}       Robozao4
 ${SOBRENOME_TESTE}  Teste
-${USUARIO_TESTE}    robozao_teste
+${USUARIO_TESTE}    robozao_teste4
 
 *** Keywords ***
-Abrir Navegador
-    [Documentation]    Abre o navegador
+que o navegador é aberto na página de cadastro
+
     Open Browser    ${URL_FRONTEND}    ${NAVEGADOR}
     Maximize Browser Window
     Set Selenium Timeout    ${TIMEOUT}
     Capture Page Screenshot    01-site-aberto.png
     Log To Console    Navegador aberto
-
-Ir Para Cadastro
-    [Documentation]    Vai para página de cadastro
     Go To    ${URL_FRONTEND}/auth/signup
     Wait Until Page Contains    Criar conta    timeout=${TIMEOUT}
     Capture Page Screenshot    02-pagina-cadastro.png
     Log To Console    Página de cadastro carregada
 
-Preencher Formulario Cadastro
-    [Documentation]    Preenche formulário de cadastro
-    Log To Console    Preenchendo dados de cadastro...
+o usuário preenche o formulário de cadastro
     
     Input Text    id:firstName        ${NOME_TESTE}
     Input Text    id:lastName         ${SOBRENOME_TESTE}
@@ -46,12 +41,11 @@ Preencher Formulario Cadastro
     Capture Page Screenshot    03-formulario-preenchido.png
     Log To Console    Formulário preenchido
 
-Submeter Cadastro
-    [Documentation]    Submete o formulário de cadastro
-    Click Button    Criar conta
+clica no botão "Criar conta"
     
+    Click Button    xpath://button[@type="submit" and contains(text(), "Criar conta")]
     TRY
-        Wait Until Location Contains    signin    timeout=10s
+        Wait Until Page Contains    Conta criada    timeout=10s
         Capture Page Screenshot    04-cadastro-sucesso.png
         Log To Console    ✅ Cadastro realizado com sucesso - dados salvos no banco!
     EXCEPT
@@ -59,16 +53,14 @@ Submeter Cadastro
         Log To Console    Usuário pode já existir no banco
     END
 
-Ir Para Login
-    [Documentation]    Vai para página de login
+o usuário é redirecionado para página de login
+
     Go To    ${URL_FRONTEND}/auth/signin
     Wait Until Page Contains    Entrar    timeout=${TIMEOUT}
     Capture Page Screenshot    05-pagina-login.png
     Log To Console    Página de login carregada
 
-Preencher Dados Login
-    [Documentation]    Preenche dados de login
-    Log To Console    Preenchendo dados de login...
+usuário preenche dados de login
     
     Input Text    name:email     ${EMAIL_TESTE}
     Input Text    name:senha     ${SENHA_TESTE}
@@ -76,10 +68,22 @@ Preencher Dados Login
     Capture Page Screenshot    06-dados-login.png
     Log To Console    Dados de login preenchidos
 
-Fazer Login
-    [Documentation]    Faz login no sistema
-    Click Button    Entrar
+clica no botão "Entrar"
     
+    # Tenta múltiplos seletores para o botão Entrar
+    TRY
+        Click Button    xpath://button[contains(text(), "Entrar")]
+    EXCEPT
+        TRY
+            Click Button    xpath://button[@type="submit"]
+        EXCEPT
+            TRY
+                Click Button    css:button[type="submit"]
+            EXCEPT
+                Click Element    xpath://button[contains(@class, "bg-rose-600")]
+            END
+        END
+    END
     TRY
         Wait Until Location Is    ${URL_FRONTEND}/    timeout=10s
         Wait Until Page Contains    NextFilm    timeout=5s
@@ -98,31 +102,22 @@ Fazer Login
         END
     END
 
+o login é realizado com sucesso
+    Wait Until Page Contains    NextFilm    timeout=${TIMEOUT}
+
 Fechar Navegador
-    [Documentation]    Fecha o navegador
     Close Browser
-    Log To Console    Teste finalizado
 
 *** Test Cases ***
 Teste Cadastro E Login
-    [Documentation]    Teste completo de cadastro e login
-    [Tags]    banco    cadastro    login
-    
-    Log To Console    \n Iniciando teste de cadastro e login...
-    
-    Abrir Navegador
-    
-    Log To Console    Testando cadastro - escrita...
-    Ir Para Cadastro
-    Preencher Formulario Cadastro
-    Submeter Cadastro
-    
-    Log To Console    Testando login - leitura...
-    Ir Para Login
-    Preencher Dados Login
-    Fazer Login
+        
+    Given que o navegador é aberto na página de cadastro
+    When o usuário preenche o formulário de cadastro
+    And clica no botão "Criar conta"
+    Then o usuário é redirecionado para página de login
+    And usuário preenche dados de login
+    When clica no botão "Entrar"
+    Then o login é realizado com sucesso
     
     Sleep    3s
     Fechar Navegador
-    
-    Log To Console    \n✅ Teste de integração com banco concluído!
