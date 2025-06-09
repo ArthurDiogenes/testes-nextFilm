@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-08T23:11:47.491664" rpa="false" schemaversion="5">
+<suite id="s1" name="Database Test" source="C:\Users\arthu\Code\nextFilm\testes\integracaoBD\database_test.robot">
+<test id="s1-t1" name="Teste Cadastro E Login" line="107">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n Iniciando teste de cadastro e login...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:47.780590" elapsed="0.000176"/>
+</kw>
+<kw name="Abrir Navegador">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:47.781776" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<arg>${URL_FRONTEND}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-08T23:11:47.781557" elapsed="1.894092"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-08T23:11:49.675806" elapsed="0.067225"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-06-08T23:11:49.743323" elapsed="0.004046"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:49.909573" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="01-site-aberto.png"&gt;&lt;img src="01-site-aberto.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>01-site-aberto.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T23:11:49.747550" elapsed="0.162110"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Navegador aberto</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:49.909778" elapsed="0.000315"/>
+</kw>
+<doc>Abre o navegador</doc>
+<status status="PASS" start="2025-06-08T23:11:47.781254" elapsed="2.128935"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Testando cadastro - escrita...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:49.910427" elapsed="0.000223"/>
+</kw>
+<kw name="Ir Para Cadastro">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:49.911058" level="INFO">Opening url 'http://localhost:3000/auth/signup'</msg>
+<arg>${URL_FRONTEND}/auth/signup</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-08T23:11:49.910960" elapsed="0.389304"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Criar conta</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.300469" elapsed="0.048760"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:50.530999" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="02-pagina-cadastro.png"&gt;&lt;img src="02-pagina-cadastro.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>02-pagina-cadastro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.349416" elapsed="0.181661"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Página de cadastro carregada</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.531191" elapsed="0.000276"/>
+</kw>
+<doc>Vai para página de cadastro</doc>
+<status status="PASS" start="2025-06-08T23:11:49.910804" elapsed="0.620756"/>
+</kw>
+<kw name="Preencher Formulario Cadastro">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Preenchendo dados de cadastro...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.532003" elapsed="0.000255"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:50.532974" level="INFO">Typing text 'Robozao' into text field 'id:firstName'.</msg>
+<arg>id:firstName</arg>
+<arg>${NOME_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.532479" elapsed="0.109866"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:50.642651" level="INFO">Typing text 'Teste' into text field 'id:lastName'.</msg>
+<arg>id:lastName</arg>
+<arg>${SOBRENOME_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.642479" elapsed="0.054194"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:50.696958" level="INFO">Typing text 'robozao_teste' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${USUARIO_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.696801" elapsed="0.102551"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:50.800174" level="INFO">Typing text 'teste-do-robozao@email.com' into text field 'id:email'.</msg>
+<arg>id:email</arg>
+<arg>${EMAIL_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.799709" elapsed="0.075348"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:50.875390" level="INFO">Typing text 'senha123' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${SENHA_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.875194" elapsed="0.087598"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:50.963143" level="INFO">Typing text 'senha123' into text field 'id:confirmPassword'.</msg>
+<arg>id:confirmPassword</arg>
+<arg>${SENHA_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:50.962949" elapsed="0.061527"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:51.024798" level="INFO">Clicking element 'id:terms'.</msg>
+<arg>id:terms</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:51.024641" elapsed="0.047596"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:51.268883" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="03-formulario-preenchido.png"&gt;&lt;img src="03-formulario-preenchido.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>03-formulario-preenchido.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T23:11:51.072368" elapsed="0.196596"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Formulário preenchido</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:51.269079" elapsed="0.000214"/>
+</kw>
+<doc>Preenche formulário de cadastro</doc>
+<status status="PASS" start="2025-06-08T23:11:50.531863" elapsed="0.737493"/>
+</kw>
+<kw name="Submeter Cadastro">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:51.269916" level="INFO">Clicking button 'Criar conta'.</msg>
+<arg>Criar conta</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:51.269818" elapsed="0.056900"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>signin</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-06-08T23:11:51.327093" elapsed="2.262865"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:53.828450" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="04-cadastro-sucesso.png"&gt;&lt;img src="04-cadastro-sucesso.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>04-cadastro-sucesso.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T23:11:53.591211" elapsed="0.237452"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Cadastro realizado com sucesso - dados salvos no banco!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:53.828961" elapsed="0.001153"/>
+</kw>
+<status status="PASS" start="2025-06-08T23:11:51.326943" elapsed="2.503242"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>04-cadastro-erro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:53.830469" elapsed="0.000042"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Usuário pode já existir no banco</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:53.830642" elapsed="0.000036"/>
+</kw>
+<status status="NOT RUN" start="2025-06-08T23:11:53.830299" elapsed="0.000433"/>
+</branch>
+<status status="PASS" start="2025-06-08T23:11:51.326865" elapsed="2.503936"/>
+</try>
+<doc>Submete o formulário de cadastro</doc>
+<status status="PASS" start="2025-06-08T23:11:51.269663" elapsed="2.561220"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Testando login - leitura...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:53.831342" elapsed="0.000294"/>
+</kw>
+<kw name="Ir Para Login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:53.833247" level="INFO">Opening url 'http://localhost:3000/auth/signin'</msg>
+<arg>${URL_FRONTEND}/auth/signin</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-08T23:11:53.832522" elapsed="0.419917"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Entrar</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.252574" elapsed="0.036654"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:54.500872" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="05-pagina-login.png"&gt;&lt;img src="05-pagina-login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>05-pagina-login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.289431" elapsed="0.211582"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Página de login carregada</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.501214" elapsed="0.000472"/>
+</kw>
+<doc>Vai para página de login</doc>
+<status status="PASS" start="2025-06-08T23:11:53.832072" elapsed="0.669719"/>
+</kw>
+<kw name="Preencher Dados Login">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Preenchendo dados de login...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.503317" elapsed="0.000474"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:54.504047" level="INFO">Typing text 'teste-do-robozao@email.com' into text field 'name:email'.</msg>
+<arg>name:email</arg>
+<arg>${EMAIL_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.503897" elapsed="0.100619"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:54.604980" level="INFO">Typing text 'senha123' into text field 'name:senha'.</msg>
+<arg>name:senha</arg>
+<arg>${SENHA_TESTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.604721" elapsed="0.068329"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:54.902757" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="06-dados-login.png"&gt;&lt;img src="06-dados-login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>06-dados-login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.673319" elapsed="0.229531"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Dados de login preenchidos</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.902968" elapsed="0.000638"/>
+</kw>
+<doc>Preenche dados de login</doc>
+<status status="PASS" start="2025-06-08T23:11:54.502771" elapsed="0.400954"/>
+</kw>
+<kw name="Fazer Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:54.904404" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.904310" elapsed="0.051717"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_FRONTEND}/</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-06-08T23:11:54.956774" elapsed="0.212944"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>NextFilm</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-06-08T23:11:55.170320" elapsed="0.009008"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-08T23:11:57.180573" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-08T23:11:55.179626" elapsed="2.001330"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T23:11:57.289804" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="07-pagina-principal.png"&gt;&lt;img src="07-pagina-principal.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>07-pagina-principal.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T23:11:57.181499" elapsed="0.108432"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Login realizado com sucesso - dados lidos do banco!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:11:57.290114" elapsed="0.000314"/>
+</kw>
+<status status="PASS" start="2025-06-08T23:11:54.956349" elapsed="2.334155"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>NextFilm</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:57.290731" elapsed="0.000021"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:57.290810" elapsed="0.000015"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>07-pagina-principal.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:57.290871" elapsed="0.000013"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Login realizado com sucesso!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:57.290937" elapsed="0.000014"/>
+</kw>
+<status status="NOT RUN" start="2025-06-08T23:11:57.290662" elapsed="0.000372"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>07-login-erro.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:57.291130" elapsed="0.000013"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Erro no login - verificar credenciais</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-06-08T23:11:57.291187" elapsed="0.000012"/>
+</kw>
+<status status="NOT RUN" start="2025-06-08T23:11:57.291073" elapsed="0.000151"/>
+</branch>
+<status status="NOT RUN" start="2025-06-08T23:11:57.290646" elapsed="0.000603"/>
+</try>
+<status status="NOT RUN" start="2025-06-08T23:11:57.290607" elapsed="0.000656"/>
+</branch>
+<status status="PASS" start="2025-06-08T23:11:54.956248" elapsed="2.335032"/>
+</try>
+<doc>Faz login no sistema</doc>
+<status status="PASS" start="2025-06-08T23:11:54.904145" elapsed="2.387167"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-08T23:12:00.291781" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-08T23:11:57.291465" elapsed="3.000409"/>
+</kw>
+<kw name="Fechar Navegador">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-08T23:12:00.292387" elapsed="2.222778"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Teste finalizado</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:12:02.515697" elapsed="0.001734"/>
+</kw>
+<doc>Fecha o navegador</doc>
+<status status="PASS" start="2025-06-08T23:12:00.292136" elapsed="2.225979"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n✅ Teste de integração com banco concluído!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T23:12:02.518714" elapsed="0.000791"/>
+</kw>
+<doc>Teste completo de cadastro e login</doc>
+<tag>banco</tag>
+<tag>cadastro</tag>
+<tag>login</tag>
+<status status="PASS" start="2025-06-08T23:11:47.779917" elapsed="14.740209"/>
+</test>
+<doc>Teste de integração com banco de dados</doc>
+<status status="PASS" start="2025-06-08T23:11:47.492540" elapsed="15.029034"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">banco</stat>
+<stat pass="1" fail="0" skip="0">cadastro</stat>
+<stat pass="1" fail="0" skip="0">login</stat>
+</tag>
+<suite>
+<stat name="Database Test" id="s1" pass="1" fail="0" skip="0">Database Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
